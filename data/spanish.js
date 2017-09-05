@@ -4602,7 +4602,7 @@ function builder( object, array ){
 //    console.log( 'state arrary is  ', array[ i ] );
 //    console.log( 'geo array is ', itemArray[ i ].properties.name );
     if ( array[ i ][ 0 ] === itemArray[ i ].properties.name ){
-      itemArray[ i ].properties.spanish = array[ i ][ 1 ];
+      itemArray[ i ].properties.spanish = parseInt( array[ i ][ 1 ] );
     };
     console.log( itemArray[ i ].properties );
   };
