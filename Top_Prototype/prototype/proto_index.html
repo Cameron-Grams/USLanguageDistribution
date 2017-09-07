@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Language Distribution in the US</title>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="proto_styles.css">
+</head>
+<main>
+
+    <body>
+      <div id='map'></div>
+      <div class='map-overlay' id='features'><h2>Language population in the US</h2><div id='pd'><p>Hover over a state!</p></div></div>
+
+
+      <div class='map-overlay' id='selectorDiv'>
+        <select id='languaeSelector'>
+          <option value='totalPopulation' title='totalPopulation'>Total Population</option>
+          <option value='spanish' title='spanish'>Spanish</option>
+        </select>
+      </div>
+
+
+
+
+
+      <div class='map-overlay' id='legend'></div>
+
+
+
+
+
+    <script src="proto_logic.js"></script>
+    </body>
+</main>
+</html>
