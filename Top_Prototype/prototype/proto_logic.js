@@ -21,14 +21,7 @@ var displayObj = {
 };
 
 $( '#displaySelectBtn').on( 'click', main );
-/*
-var map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/cameron43/cj77s63px6ktq2rtezsllwonq',
-  center: [ -101.404, 48.829 ],
-  zoom: 2.0
-});
-*/
+
 function loadNewMap( language ){
   $( '#map' ).empty();
   map = new mapboxgl.Map( {
@@ -79,21 +72,7 @@ function readPosition( map, language ){
   });
   map.getCanvas().style.cursor = 'default';
 };
-/*
-map.on('mousemove', function(e) {
-    var states = map.queryRenderedFeatures(e.point, {
-      layers: [ 'spanish' ]
-    });
-  
-    if (states.length > 0) {
-      document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.spanish + '</strong> people speak spanish in ' + states[0].properties.name + '</em></p>';
-    } else {
-      document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
-    }
-  });
 
-map.getCanvas().style.cursor = 'default';
-*/
 function main(){
   console.log( 'in main' );
   let language = $( '#languageSelector' ).val();  //had to move the selector here in order to pass the value
