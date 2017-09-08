@@ -75,6 +75,12 @@ function readPosition( map, language ){
 
 function main(){
   console.log( 'in main' );
+  let loader = document.getElementById( 'waitImage' );
+  loader.style.display = 'block'; 
+  setTimeout( function(){ 
+    loader.style.display = 'none';
+    
+  }, 1500 );
   let language = $( '#languageSelector' ).val();  //had to move the selector here in order to pass the value
   loadNewMap( language );
 };
