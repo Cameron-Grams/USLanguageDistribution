@@ -45,9 +45,14 @@ body {
   }
 
   #selectorDiv{
+    position: absolute;
     top: 0;
+    right: 20px;
     margin-top: 20px;
-/*    margin-right: 350px; */
+    background: rgba(255, 255, 255, 0.8);
+    font-family: Arial, sans-serif;
+    overflow: auto;
+    border-radius: 3px;
   }
   
   #features {

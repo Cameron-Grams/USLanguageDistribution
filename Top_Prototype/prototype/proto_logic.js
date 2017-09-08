@@ -1,5 +1,23 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FtZXJvbjQzIiwiYSI6ImNqNzF1czNnajA2dmgzM24xNGVoNmltbnQifQ.5uzTFIefwgSiHHfAjk4azg';
 
+var displayObj = {
+  totalPopulation: {
+    style: '  style string....',
+    layers:'  ',   //layer array...
+    colors: '  ',    //color array
+    displayType: '  ',   //name of the property in the 'properties' property of the layer object 
+    descriptor: '   '  //role played by the layer, people per state, spanish speakers, etc. ... 
+  },
+  spanish: {
+    style: 'mapbox://styles/cameron43/cj77s63px6ktq2rtezsllwonq',
+    layers: [ '0 - 10000', '10000 - 50000', '50000- 100000', '100000 - 500000', '500000 - 1000000', '1000000 - 3000000', '3000000 - 6000000', '6000000 - 8000000', '8000000 - 10000000' ], 
+    colors: [ '#e0cccc', '#c9afaf', '#dbb6b6', '#cc9494', '#a86a6a', '#a85252', '#b23a3a', '#af2323', '#a51212', '#930202' ],  
+    displayType: 'spanish',   //name of the property in the 'properties' property of the layer object 
+    descriptor: ' people speak spanish '  //role played by the layer, people per state, spanish speakers, etc. ... 
+  }
+
+};
+
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/cameron43/cj77s63px6ktq2rtezsllwonq',
