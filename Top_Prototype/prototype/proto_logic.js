@@ -14,9 +14,17 @@ var displayObj = {
     layers: [ '0 - 10000', '10000 - 50000', '50000- 100000', '100000 - 500000', '500000 - 1000000', '1000000 - 3000000', '3000000 - 6000000', '6000000 - 8000000', '8000000 - 10000000' ], 
     colors: [ '#e0cccc', '#c9afaf', '#dbb6b6', '#cc9494', '#a86a6a', '#a85252', '#b23a3a', '#af2323', '#a51212', '#930202' ],  
     displayType: 'spanish',
-    descriptor: ' speak spanish ',
+    descriptor: ' speak Spanish ',
     role: 'spanish' 
-    }
+    },
+  swedish: {
+    style: 'mapbox://styles/cameron43/cj7dws4sd19nm2slcbfyrhhig',
+    layers: [ '0', '1 - 100', '100 - 200' , '200 - 300', '300 - 400', '400 - 500', '500 - 600', '600 - 700', '700 - 800', '800 - 900', '900 + ' ],
+    colors: [ '#040005', '#f3e3f7', '#e8cbef', '#d3aadd', '#b47fc1', '#9d5bad', '#9041a3', '#7b2c8e', '#691a7c', '#620b77', '#4c025e' ],
+    displayType: 'swedish',
+    descriptor: ' speak Swedish ',
+    role: 'swedish'
+  }  
 
 };
 
