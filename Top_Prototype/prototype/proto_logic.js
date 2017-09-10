@@ -19,8 +19,8 @@ var displayObj = {
     },
   swedish: {
     style: 'mapbox://styles/cameron43/cj7dws4sd19nm2slcbfyrhhig',
-    layers: [ '0', '1 - 100', '100 - 200' , '200 - 300', '300 - 400', '400 - 500', '500 - 600', '600 - 700', '700 - 800', '800 - 900', '900 + ' ],
-    colors: [ '#040005', '#f3e3f7', '#e8cbef', '#d3aadd', '#b47fc1', '#9d5bad', '#9041a3', '#7b2c8e', '#691a7c', '#620b77', '#4c025e' ],
+    layers: [ '0', '1 - 100', '100 - 200' , '200 - 300', '300 - 400', '400 - 500', '500 - 600', '600 - 700', '700 - 800', '800 - 900' ],
+    colors: [ '#040005', '#f3e3f7', '#e8cbef', '#d3aadd', '#b47fc1', '#9d5bad', '#9041a3', '#7b2c8e', '#691a7c', '#620b77' ],
     displayType: 'swedish',
     descriptor: ' speak Swedish ',
     role: 'swedish'
