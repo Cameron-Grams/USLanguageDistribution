@@ -1,7 +1,7 @@
 Puerto Rico,390,German,607,72
 ,Rhode Island,1620,German,607,44
 ,Wyoming,1635,German,607,56
-,Vermont,2180,German,607,50
+,Vermont,2180,German,607,50   ================2500
 ,District of Columbia,2625,German,607,11
 ,West Virginia,2890,German,607,54
 ,Mississippi,3145,German,607,28
@@ -9,44 +9,44 @@ Puerto Rico,390,German,607,72
 ,Maine,3415,German,607,23
 ,Alaska,3660,German,607,02
 ,New Hampshire,3920,German,607,33
-,Idaho,4485,German,607,16
+,Idaho,4485,German,607,16  ================4500
 ,Hawaii,4615,German,607,15
 ,Louisiana,5395,German,607,22
 ,Arkansas,5475,German,607,05
-,Nebraska,5690,German,607,31
+,Nebraska,5690,German,607,31  =============7000
 ,Montana,7120,German,607,30
 ,New Mexico,7580,German,607,35
 ,South Dakota,7690,German,607,46
 ,Nevada,7945,German,607,32
 ,North Dakota,8540,German,607,38
-,Utah,9025,German,607,49
+,Utah,9025,German,607,49 ==================9000
 ,Alabama,10040,German,607,01
 ,Oklahoma,10490,German,607,40
 ,Connecticut,11535,German,607,09
 ,Iowa,12465,German,607,19
-,South Carolina,12660,German,607,45
+,South Carolina,12660,German,607,45  ============13000
 ,Kentucky,13015,German,607,21
 ,Kansas,13095,German,607,20
 ,Tennessee,13920,German,607,47
-,Oregon,15170,German,607,41
+,Oregon,15170,German,607,41 ================ 16000
 ,Massachusetts,17515,German,607,25
 ,Maryland,18285,German,607,24
 ,Missouri,22910,German,607,29
 ,Arizona,23020,German,607,04
 ,North Carolina,23515,German,607,37
-,Minnesota,24275,German,607,27
+,Minnesota,24275,German,607,27 =====================25000
 ,Colorado,25645,German,607,08
 ,Georgia,25960,German,607,13
 ,New Jersey,27405,German,607,34
 ,Virginia,31145,German,607,51
 ,Washington,32475,German,607,53
-,Indiana,35400,German,607,18
+,Indiana,35400,German,607,18 =================35000
 ,Wisconsin,36400,German,607,55
 ,Michigan,39505,German,607,26
 ,Illinois,45780,German,607,17
-,Pennsylvania,51345,German,607,42
+,Pennsylvania,51345,German,607,42 ============ 50000
 ,Ohio,54195,German,607,39
 ,New York,65165,German,607,36
 ,Texas,69140,German,607,48
 ,Florida,69410,German,607,12
-,California,110545,German,607,06
+,California,110545,German,607,06 ==========100000
