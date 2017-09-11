@@ -44,7 +44,8 @@ var displayObj = {
 
 };
 
-$( '#displaySelectBtn').on( 'click', main );
+// $( '#displaySelectBtn' ).on( 'click', main );
+$( '#languageSelector' ).change( main );
 
 function loadNewMap( language ){
   $( '#map' ).empty();
@@ -62,6 +63,10 @@ function loadKey( language ){
   let layers = displayObj[ language ].layers;
   let colors = displayObj[ language ].colors;
   $( '#legend' ).empty();
+
+  var colorKeyTitle = document.createElement( 'h3' );
+  colorKeyTitle.innerHTML = "Key for Colors";
+  legend.appendChild( colorKeyTitle );
 
   for (i = 0; i < layers.length; i++) {
     var layer = layers[i];
@@ -103,7 +108,6 @@ function main(){
   loader.style.display = 'block'; 
   setTimeout( function(){ 
     loader.style.display = 'none';
-    
   }, 1500 );
   let language = $( '#languageSelector' ).val();  //had to move the selector here in order to pass the value
   loadNewMap( language );
