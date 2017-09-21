@@ -100,9 +100,13 @@ function readPosition( map, language ){
     var states = map.queryRenderedFeatures(e.point, {
       layers: [ displayObj[ language ].displayType ]
     });
-  
+
+    let stateNumber = states[0].properties[ role ];
+    console.log( stateNumber );
+
     if (states.length > 0) {
-      document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties[ role ] + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
+//      let stateNumber = states[0].properties[ 'role' ];
+      document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
     } else {
       document.getElementById('pd').innerHTML = '<p>Hover over a state for details</p>';
     }
