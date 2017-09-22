@@ -31,7 +31,7 @@ var displayObj = {
   chinese: {
     intro: "1,867,485 Chinese Speakers in US",
     style: 'mapbox://styles/cameron43/cj7e0z1z71dqp2spkukfxhyoy',
-    layers: [ '0 - 1200', '1200 - 2500', '2500 - 5000', '5000 - 8000', '8000 - 15000', '15000 - 20000', '20000 - 35000', '35000 - 50000', '50000 - 70000', '70000 - 1000000' ],
+    layers: [ '0 to 1200', '2500', '5000', '8000', '15000', '20000', '35000', '50000', '70000', '1000000 +' ],
     colors: [ '#edecdc', '#d6d4b8', '#cecca1', '#ccc98c', '#c1bd70', '#c1bd60', '#c6c253', '#c1bd43', '#bab523', '#7c7802' ],
     displayType: 'chinese',
     descriptor: ' speak Chinese ',
@@ -40,7 +40,7 @@ var displayObj = {
   german: {
     intro: "1,063,275 German Speakers in US",
     style: 'mapbox://styles/cameron43/cj7e3fe5u1g852sohb8hm8sn0',
-    layers: [ '0 - 2500', '2500 - 4500', '4500 - 7000', '7000 - 9000', '9000 - 13000', '13000 - 16000' , '16000 - 25000', '25000 - 35000', '35000 - 50000', '50000 - 100000' ],  
+    layers: [ '0 to 2500', '4500', '7000', '9000', '13000', '16000' , '25000', '35000', '50000', '100000 +' ],  
     colors: [ '#d7e0d8', '#c7dbc9', '#afd6b3', '#95d69c', '#75c67e', '#5ebc68', '#46af51', '#30a03b', '#1f962b', '#077a12' ],
     displayType: 'german',
     descriptor: ' speak German ',
@@ -48,10 +48,18 @@ var displayObj = {
   }  
 
 };
+//creates the modal object to display the introduction
+var modal = document.getElementById( 'introModal' );
 
-// $( '#displaySelectBtn' ).on( 'click', main );
+
+//event handler to remove the modal and begin
+$( '.close' ).on( 'click', main );
+
+//event handler that calls the main() to repopulate the map with a new language
+//after a new language is selected
 $( '#languageSelector' ).change( main );
 
+//loads map by calling language specific map layer from the API
 function loadNewMap( language ){
   $( '#map' ).empty();
   map = new mapboxgl.Map( {
@@ -64,6 +72,7 @@ function loadNewMap( language ){
   readPosition( map, language );
 };
 
+//builds the key specific to the language onto the map
 function loadKey( language ){
   let layers = displayObj[ language ].layers;
   let colors = displayObj[ language ].colors;
@@ -73,7 +82,7 @@ function loadKey( language ){
   console.log( displayObj[ language ].intro );
 
   var colorKeyTitle = document.createElement( 'h3' );
-  colorKeyTitle.innerHTML = "Key for Colors";
+  colorKeyTitle.innerHTML = "Number of Speakers";
   legend.appendChild( colorKeyTitle );
 
   for (i = 0; i < layers.length; i++) {
@@ -92,6 +101,7 @@ function loadKey( language ){
   }
 }
 
+//mousehandler that reads the data from the map layer specific to the state's language speakers
 function readPosition( map, language ){
   let role = displayObj[ language ].role;
   let purpose = displayObj[ language ].descriptor;
@@ -114,7 +124,10 @@ function readPosition( map, language ){
   map.getCanvas().style.cursor = 'default';
 };
 
+//transition function to initiate language layer display
 function main(){
+  modal.style.display = "none";
+  showGuidInfo();
   console.log( 'in main' );
   let loader = document.getElementById( 'waitImage' );
   loader.style.display = 'block'; 
@@ -125,5 +138,31 @@ function main(){
   loadNewMap( language );
 };
 
+function hideGuidInfo(){
+  var guide = document.getElementById( 'selectorDiv' );
+  var features = document.getElementById( 'features' ); 
+  var legend = document.getElementById( 'legend' );
+  guide.style.display = 'none';
+  features.style.display = 'none';
+  legend.style.display = 'none';
+}
 
-$( main );
+function showGuidInfo(){
+  var guide = document.getElementById( 'selectorDiv' );
+  var features = document.getElementById( 'features' ); 
+  var legend = document.getElementById( 'legend' );
+  guide.style.display = 'block';
+  features.style.display = 'block';
+  legend.style.display = 'block';
+}
+
+
+//function that diplays the initial instruction with the modal
+function introduction(){
+  modal.style.display = "block";
+  hideGuidInfo();
+}
+
+
+$( introduction );
+// $( main );
