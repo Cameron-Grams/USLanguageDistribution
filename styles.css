@@ -24,7 +24,7 @@ body {
     display: none;
     position: fixed; 
     z-index: 2;
-    padding-top: 200px; 
+    padding-top: 15%; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -42,18 +42,23 @@ body {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    border-radius: 5px;
+    border: 1px solid #4A4949;
+    border-radius: 15px;
     width: 60%;
 }
 
 .close{
   margin: 50px;
-  color: #480202;
+  width: 20%;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 7px;
+  color: white;
+  background-color: #480202;
 }
 
 .close:hover{
-  color: #076809;
+  background-color: #076809;
 }
 
 
