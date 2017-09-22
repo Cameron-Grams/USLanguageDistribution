@@ -13,7 +13,7 @@ var displayObj = {
   spanish: {
     intro: "37,458,470 Spanish Speakers in US",
     style: 'mapbox://styles/cameron43/cj77s63px6ktq2rtezsllwonq',
-    layers: [ '0 - 10000', '10000 - 50000', '50000- 100000', '100000 - 500000', '500000 - 1000000', '1000000 - 3000000', '3000000 - 6000000', '6000000 - 8000000', '8000000 - 10000000' ], 
+    layers: [ '0 to 10,000', '10,000', '50,000', '100,000', '500,000', '1,000,000', '3,000,000', '6,000,000', '8,000,000 +' ], 
     colors: [ '#e0cccc', '#c9afaf', '#dbb6b6', '#cc9494', '#a86a6a', '#a85252', '#b23a3a', '#af2323', '#a51212', '#930202' ],  
     displayType: 'spanish',
     descriptor: ' speak Spanish ',
@@ -22,7 +22,7 @@ var displayObj = {
   swedish: {
     intro: "55,735 Swedish Speakers in the US ",
     style: 'mapbox://styles/cameron43/cj7dws4sd19nm2slcbfyrhhig',
-    layers: [ '0', '1 - 100', '100 - 200' , '200 - 300', '300 - 400', '400 - 500', '500 - 600', '600 - 700', '700 - 800', '800 - 900' ],
+    layers: [ '0', '1 to 100', '100' , '200', '300', '400', '500', '600', '700', '800 +' ],
     colors: [ '#040005', '#f3e3f7', '#e8cbef', '#d3aadd', '#b47fc1', '#9d5bad', '#9041a3', '#7b2c8e', '#691a7c', '#620b77' ],
     displayType: 'swedish',
     descriptor: ' speak Swedish ',
@@ -31,7 +31,7 @@ var displayObj = {
   chinese: {
     intro: "1,867,485 Chinese Speakers in US",
     style: 'mapbox://styles/cameron43/cj7e0z1z71dqp2spkukfxhyoy',
-    layers: [ '0 to 1200', '2500', '5000', '8000', '15000', '20000', '35000', '50000', '70000', '1000000 +' ],
+    layers: [ '0 to 1200', '2,500', '5,000', '8,000', '15,000', '20,000', '35,000', '50,000', '70,000', '100,000 +' ],
     colors: [ '#edecdc', '#d6d4b8', '#cecca1', '#ccc98c', '#c1bd70', '#c1bd60', '#c6c253', '#c1bd43', '#bab523', '#7c7802' ],
     displayType: 'chinese',
     descriptor: ' speak Chinese ',
@@ -40,7 +40,7 @@ var displayObj = {
   german: {
     intro: "1,063,275 German Speakers in US",
     style: 'mapbox://styles/cameron43/cj7e3fe5u1g852sohb8hm8sn0',
-    layers: [ '0 to 2500', '4500', '7000', '9000', '13000', '16000' , '25000', '35000', '50000', '100000 +' ],  
+    layers: [ '0 to 2,500', '2,500', '4,500', '7,000', '9,000', '13,000' , '16,000', '25,000', '35,000', '50,000 +' ],  
     colors: [ '#d7e0d8', '#c7dbc9', '#afd6b3', '#95d69c', '#75c67e', '#5ebc68', '#46af51', '#30a03b', '#1f962b', '#077a12' ],
     displayType: 'german',
     descriptor: ' speak German ',
@@ -50,7 +50,6 @@ var displayObj = {
 };
 //creates the modal object to display the introduction
 var modal = document.getElementById( 'introModal' );
-
 
 //event handler to remove the modal and begin
 $( '.close' ).on( 'click', main );
@@ -79,7 +78,6 @@ function loadKey( language ){
   $( '#legend' ).empty();
 
   $( '#js-intro' ).html( displayObj[ language ].intro );
-  console.log( displayObj[ language ].intro );
 
   var colorKeyTitle = document.createElement( 'h3' );
   colorKeyTitle.innerHTML = "Number of Speakers";
@@ -112,7 +110,6 @@ function readPosition( map, language ){
     });
 
     let stateNumber = states[0].properties[ role ];
-    console.log( stateNumber );
 
     if (states.length > 0) {
 //      let stateNumber = states[0].properties[ 'role' ];
@@ -128,7 +125,6 @@ function readPosition( map, language ){
 function main(){
   modal.style.display = "none";
   showGuidInfo();
-  console.log( 'in main' );
   let loader = document.getElementById( 'waitImage' );
   loader.style.display = 'block'; 
   setTimeout( function(){ 
