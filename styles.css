@@ -24,12 +24,11 @@ body {
     Font-Size: 35px;
   }
 
-  .introFont{
-    display: block;
-    margin-top: 30px;
-    Font-Family: 'Droid Serif', Serif;
-    Font-Size: 1em;
-  }
+.introFont{
+  margin-top: 30px;
+  Font-Family: 'Droid Serif', Serif;
+  Font-Size: 1em;
+}
 
 /* The Modal (background) */
 .modal {
@@ -79,12 +78,12 @@ body {
   /**
   * Create a position for the map
   * on the page */
-  #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
   
   #waitImage{
     background: url( './images/Infinity.gif' ) center no-repeat;
@@ -133,7 +132,7 @@ body {
     line-height: 18px;
     height: 220px;
     margin-bottom: 20px;
-    width: 195px;
+    width: 155px;
   }
   
   .legend-key {
@@ -142,4 +141,4 @@ body {
     width: 10px;
     height: 10px;
     margin-right: 5px;
-  
+  }

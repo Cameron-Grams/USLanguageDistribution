@@ -80,7 +80,7 @@ function loadKey( language ){
   $( '#js-intro' ).html( displayObj[ language ].intro );
 
   var colorKeyTitle = document.createElement( 'h3' );
-  colorKeyTitle.innerHTML = "Number of Speakers";
+  colorKeyTitle.innerHTML = "Population";
   legend.appendChild( colorKeyTitle );
 
   for (i = 0; i < layers.length; i++) {
