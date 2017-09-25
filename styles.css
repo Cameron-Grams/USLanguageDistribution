@@ -25,9 +25,11 @@ body {
   }
 
 .introFont{
+  display: inline-block;
   margin-top: 30px;
   Font-Family: 'Droid Serif', Serif;
-  Font-Size: 1em;
+  Font-Size: 1.2em;
+  width: 75%;
 }
 
 /* The Modal (background) */
@@ -35,7 +37,7 @@ body {
     display: none;
     position: fixed; 
     z-index: 2;
-    padding-top: 10%; 
+    padding-top: 5%; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -48,7 +50,7 @@ body {
 /* Modal Content */
 .modal-introduction-content {
     box-sizing: border-box; /* still not holding a fixed size  with font changes */
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
     background-color: #fefefe;
     margin: auto;
