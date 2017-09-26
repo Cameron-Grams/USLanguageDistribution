@@ -135,23 +135,12 @@ function main(){
 };
 
 function hideGuideInfo(){
-  var guide = document.getElementById( 'selectorDiv' );
-  var features = document.getElementById( 'features' ); 
-  var legend = document.getElementById( 'legend' );
-  guide.style.display = 'none';
-  features.style.display = 'none';
-  legend.style.display = 'none';
+  $( '.operationalView' ).hide();
 }
 
 function showGuideInfo(){
-  var guide = document.getElementById( 'selectorDiv' );
-  var features = document.getElementById( 'features' ); 
-  var legend = document.getElementById( 'legend' );
-  guide.style.display = 'block';
-  features.style.display = 'block';
-  legend.style.display = 'block';
+  $( '.operationalView' ).show();
 }
-
 
 //function that diplays the initial instruction with the modal
 function introduction(){
