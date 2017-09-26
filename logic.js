@@ -124,7 +124,7 @@ function readPosition( map, language ){
 //transition function to initiate language layer display
 function main(){
   modal.style.display = "none";
-  showGuidInfo();
+  showGuideInfo();
   let loader = document.getElementById( 'waitImage' );
   loader.style.display = 'block'; 
   setTimeout( function(){ 
@@ -134,7 +134,8 @@ function main(){
   loadNewMap( language );
 };
 
-function hideGuidInfo(){
+/*
+function hideGuideInfo(){
   var guide = document.getElementById( 'selectorDiv' );
   var features = document.getElementById( 'features' ); 
   var legend = document.getElementById( 'legend' );
@@ -143,7 +144,7 @@ function hideGuidInfo(){
   legend.style.display = 'none';
 }
 
-function showGuidInfo(){
+function showGuideInfo(){
   var guide = document.getElementById( 'selectorDiv' );
   var features = document.getElementById( 'features' ); 
   var legend = document.getElementById( 'legend' );
@@ -152,11 +153,24 @@ function showGuidInfo(){
   legend.style.display = 'block';
 }
 
+*/
+function hideGuideInfo(){
+  let hidden = document.getElementsByClassName( 'operationalView' );
+  console.log( hidden );
+  let result = hidden.map( item => item.style.display = 'none' );
+  return result;
+}
 
+function showGuideInfo(){
+  let show = document.getElementsByClassName( 'operationalView' )
+  let result = show.map( item => item.style.display = 'block' );
+  return result;
+}
+ 
 //function that diplays the initial instruction with the modal
 function introduction(){
   modal.style.display = "block";
-  hideGuidInfo();
+  hideGuideInfo();
 }
 
 
