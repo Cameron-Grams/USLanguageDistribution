@@ -134,26 +134,6 @@ function main(){
   loadNewMap( language );
 };
 
-/*
-function hideGuideInfo(){
-  var guide = document.getElementById( 'selectorDiv' );
-  var features = document.getElementById( 'features' ); 
-  var legend = document.getElementById( 'legend' );
-  guide.style.display = 'none';
-  features.style.display = 'none';
-  legend.style.display = 'none';
-}
-
-function showGuideInfo(){
-  var guide = document.getElementById( 'selectorDiv' );
-  var features = document.getElementById( 'features' ); 
-  var legend = document.getElementById( 'legend' );
-  guide.style.display = 'block';
-  features.style.display = 'block';
-  legend.style.display = 'block';
-}
-*/
-
 function hideGuideInfo(){
   console.log( $( '.operationalView' ) );
   $( '.operationalView' ).hide();
