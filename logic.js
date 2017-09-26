@@ -152,21 +152,17 @@ function showGuideInfo(){
   features.style.display = 'block';
   legend.style.display = 'block';
 }
-
 */
+
 function hideGuideInfo(){
-  let hidden = document.getElementsByClassName( 'operationalView' );
-  console.log( hidden );
-  let result = hidden.map( item => item.style.display = 'none' );
-  return result;
+  console.log( $( '.operationalView' ) );
+  $( '.operationalView' ).hide();
 }
 
 function showGuideInfo(){
-  let show = document.getElementsByClassName( 'operationalView' )
-  let result = show.map( item => item.style.display = 'block' );
-  return result;
+  $( '.operationalView' ).show();
 }
- 
+
 //function that diplays the initial instruction with the modal
 function introduction(){
   modal.style.display = "block";
