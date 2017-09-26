@@ -43,8 +43,8 @@ body {
     width: 100%; 
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background: url( './images/earth2.png' ) no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Modal Content */
@@ -73,10 +73,7 @@ body {
 .close:hover{
   background-color: #076809;
 }
-
-
-  
-  
+ 
   /**
   * Create a position for the map
   * on the page */
@@ -134,7 +131,8 @@ body {
     line-height: 18px;
     height: 220px;
     margin-bottom: 20px;
-    width: 155px;
+    margin-right: 10px;
+    width: 125px;
   }
   
   .legend-key {
