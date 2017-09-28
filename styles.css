@@ -109,7 +109,6 @@ p {
 
 #selectorDiv{
   position: absolute;
-  display: inline;
   top: 0;
   right: 20px;
   margin-top: 20px;
@@ -121,6 +120,7 @@ p {
 
 .languages{
   display: inline-block;
+  margin-right: 15px;
 }
   
 #features {

@@ -51,12 +51,10 @@ var displayObj = {
 
 //transition function to initiate language layer display
 function main(){
-  modal.style.display = "none";
+  $( '#introModal' ).css( "display", "none" );
   showGuideInfo();
-  let loader = document.getElementById( 'waitImage' );
-  loader.style.display = 'block'; 
   setTimeout( function(){ 
-    loader.style.display = 'none';
+    $( '#waitImage' ).css( 'display', 'none' );
   }, 1500 );
   let language = $( '#js-languageSelector' ).val();  //had to move the selector here in order to pass the value
   loadNewMap( language );
@@ -72,7 +70,7 @@ function showGuideInfo(){
 
 //function that diplays the initial instruction with the modal
 function introduction(){
-  modal.style.display = "block";
+  $( '#introModal' ).css( 'display', 'block' );
   hideGuideInfo();
 }
 
@@ -94,16 +92,18 @@ function loadKey( language ){
   let layers = displayObj[ language ].layers;
   let colors = displayObj[ language ].colors;
   $( '#legend' ).empty();
-
+  $( '#legend' ).append( '<h3>Population</h3>' );
   $( '#js-intro' ).html( displayObj[ language ].intro );
 
-  var colorKeyTitle = document.createElement( 'h3' );
-  colorKeyTitle.innerHTML = "Population";
-  legend.appendChild( colorKeyTitle );
+//  var colorKeyTitle = document.createElement( 'h3' );
+//  colorKeyTitle.innerHTML = "Population";
+//  legend.appendChild( colorKeyTitle );
 
   for (i = 0; i < layers.length; i++) {
     var layer = layers[i];
     var color = colors[i];
+
+/*    
     var item = document.createElement('div');
     var key = document.createElement('span');
     key.className = 'legend-key';
@@ -114,6 +114,12 @@ function loadKey( language ){
     item.appendChild(key);
     item.appendChild(value);
     legend.appendChild(item);  //not clear how this selects? 
+*/
+    let colorSpan = $( '<span></span>' ).css( 'background-color', color );
+    console.log( colorSpan );
+    let valueSpan = $( '<span></span>' ).html( layer );
+
+    $( '#legend' ).append( `<div>${ colorSpan } ${ valueSpan }</div>`)
   }
 }
 
@@ -138,15 +144,12 @@ function readPosition( map, language ){
   map.getCanvas().style.cursor = 'default';
 };
 
-//creates the modal object to display the introduction
-var modal = document.getElementById( 'introModal' );
-
 //event handler to remove the modal and begin
 $( '.close' ).on( 'click', main );
 
 //event handler that calls the main() to repopulate the map with a new language
 //after a new language is selected
-$( '#languageSelector' ).change( main );
+$( '#js-languageSelector' ).change( main );
 
 $( introduction );
 // $( main );
