@@ -48,6 +48,34 @@ var displayObj = {
   }  
 
 };
+
+//transition function to initiate language layer display
+function main(){
+  modal.style.display = "none";
+  showGuideInfo();
+  let loader = document.getElementById( 'waitImage' );
+  loader.style.display = 'block'; 
+  setTimeout( function(){ 
+    loader.style.display = 'none';
+  }, 1500 );
+  let language = $( '#js-languageSelector' ).val();  //had to move the selector here in order to pass the value
+  loadNewMap( language );
+};
+
+function hideGuideInfo(){
+  $( '.js-operationalView' ).hide();
+}
+
+function showGuideInfo(){
+  $( '.js-operationalView' ).show();
+}
+
+//function that diplays the initial instruction with the modal
+function introduction(){
+  modal.style.display = "block";
+  hideGuideInfo();
+}
+
 //loads map by calling language specific map layer from the API
 function loadNewMap( language ){
   $( '#map' ).empty();
@@ -102,7 +130,6 @@ function readPosition( map, language ){
     let stateNumber = states[0].properties[ role ];
 
     if (states.length > 0) {
-//      let stateNumber = states[0].properties[ 'role' ];
       document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
     } else {
       document.getElementById('pd').innerHTML = '<p>Hover over a state for details</p>';
@@ -110,33 +137,6 @@ function readPosition( map, language ){
   });
   map.getCanvas().style.cursor = 'default';
 };
-
-//transition function to initiate language layer display
-function main(){
-  modal.style.display = "none";
-  showGuideInfo();
-  let loader = document.getElementById( 'waitImage' );
-  loader.style.display = 'block'; 
-  setTimeout( function(){ 
-    loader.style.display = 'none';
-  }, 1500 );
-  let language = $( '#languageSelector' ).val();  //had to move the selector here in order to pass the value
-  loadNewMap( language );
-};
-
-function hideGuideInfo(){
-  $( '.operationalView' ).hide();
-}
-
-function showGuideInfo(){
-  $( '.operationalView' ).show();
-}
-
-//function that diplays the initial instruction with the modal
-function introduction(){
-  modal.style.display = "block";
-  hideGuideInfo();
-}
 
 //creates the modal object to display the introduction
 var modal = document.getElementById( 'introModal' );
