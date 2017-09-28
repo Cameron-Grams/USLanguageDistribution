@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <title>Language Distribution in the US</title>
-<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Roboto:300" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,22 +11,22 @@
     <main>  
         <div id="waitImage"></div>
 
-        <div id='map'></div>
+        <div id="map"></div>
 
-        <div class='operationalView' id='selectorDiv'>
+        <div class="operationalView" id="selectorDiv">
             <h3>Select Display</h3>
-            <select id='languageSelector'>
-              <option value='totalPopulation' title='totalPopulation' selected >Total Population</option>
-              <option value='chinese' title='chinese'>Chinese</option>
-              <option value='german' title='german'>German</option>
-              <option value='spanish' title='spanish'>Spanish</option>
-              <option value='swedish' title='swedish'>Swedish</option>
+            <select id="languageSelector">
+              <option value="totalPopulation" title="totalPopulation" selected >Total Population</option>
+              <option value="chinese" title="chinese">Chinese</option>
+              <option value="german" title="german">German</option>
+              <option value="spanish" title="spanish">Spanish</option>
+              <option value="swedish" title="swedish">Swedish</option>
             </select>
         </div>
 
-        <div class="map-overlay operationalView" id='features'><h3 id="js-intro">Language population in the US</h2><div id='pd'><p>Hover over a state for details</p></div></div>
+        <div class="map-overlay operationalView" id="features"><h3 id="js-intro">Language population in the US</h2><div id='pd'><p>Hover over a state for details</p></div></div>
  
-        <div class="map-overlay operationalView" id='legend'>Colors for Population</div>
+        <div class="map-overlay operationalView" id="legend">Colors for Population</div>
 
         <div id="introModal" class="modal">
             <div class="modal-introduction-content">
@@ -34,7 +34,7 @@
                 <span class="introFont">This program displays the concentraion of languages in the United States.</span><br>
                 <span class="introFont">The display layers of language distribution on the map are built with 2013 US Census data.</span><br>
                 <span class="introFont">Choose the language to display by selecting the language from the drop-down menu in the upper-right.</span><br>
-                <input type="button" class="close" value="Click to begin"</input>
+                <input type="button" class="close" value="Click to begin" />
             </div>
         </div>
   

@@ -48,16 +48,6 @@ var displayObj = {
   }  
 
 };
-//creates the modal object to display the introduction
-var modal = document.getElementById( 'introModal' );
-
-//event handler to remove the modal and begin
-$( '.close' ).on( 'click', main );
-
-//event handler that calls the main() to repopulate the map with a new language
-//after a new language is selected
-$( '#languageSelector' ).change( main );
-
 //loads map by calling language specific map layer from the API
 function loadNewMap( language ){
   $( '#map' ).empty();
@@ -148,6 +138,15 @@ function introduction(){
   hideGuideInfo();
 }
 
+//creates the modal object to display the introduction
+var modal = document.getElementById( 'introModal' );
+
+//event handler to remove the modal and begin
+$( '.close' ).on( 'click', main );
+
+//event handler that calls the main() to repopulate the map with a new language
+//after a new language is selected
+$( '#languageSelector' ).change( main );
 
 $( introduction );
 // $( main );
