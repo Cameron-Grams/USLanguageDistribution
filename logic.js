@@ -135,7 +135,7 @@ function readPosition( map, language ){
       layers: [ displayObj[ language ].displayType ]
     });
 
-    if ( states ){
+    if ( states[ 0 ] ){
       stateNumber = states[0].properties[ role ];
     }
 
