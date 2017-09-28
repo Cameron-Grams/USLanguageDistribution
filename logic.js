@@ -115,10 +115,10 @@ function loadKey( language ){
     item.appendChild(value);
     legend.appendChild(item);  //not clear how this selects? 
 */
-    let colorSpan = $( '<span></span>' ).css( 'background-color', color );
-    console.log( colorSpan );
-    let valueSpan = $( '<span></span>' ).html( layer );
+    let colorSpan = $( '<span>color span</span>' );
 
+    let valueSpan = $.parseHTML( `${ layer }` );
+    
     $( '#legend' ).append( `<div>${ colorSpan } ${ valueSpan }</div>`)
   }
 }
@@ -127,13 +127,17 @@ function loadKey( language ){
 function readPosition( map, language ){
   let role = displayObj[ language ].role;
   let purpose = displayObj[ language ].descriptor;
+  let states, stateNumber; 
 
   map.on('mousemove', function(e) {
+
     var states = map.queryRenderedFeatures(e.point, {
       layers: [ displayObj[ language ].displayType ]
     });
 
-    let stateNumber = states[0].properties[ role ];
+    if ( states ){
+      stateNumber = states[0].properties[ role ];
+    }
 
     if (states.length > 0) {
       document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
