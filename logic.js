@@ -102,24 +102,11 @@ function loadKey( language ){
   for (i = 0; i < layers.length; i++) {
     var layer = layers[i];
     var color = colors[i];
-
-/*    
-    var item = document.createElement('div');
-    var key = document.createElement('span');
-    key.className = 'legend-key';
-    key.style.backgroundColor = color;
-  
-    var value = document.createElement('span');
-    value.innerHTML = layer;
-    item.appendChild(key);
-    item.appendChild(value);
-    legend.appendChild(item);  //not clear how this selects? 
-*/
-    let colorSpan = $( '<span>color span</span>' );
-
-    let valueSpan = $.parseHTML( `${ layer }` );
-    
-    $( '#legend' ).append( `<div>${ colorSpan } ${ valueSpan }</div>`)
+    var item = $( '<div></div>' );
+    var key = $( document.createElement( "span" ) ).addClass( "legend-key" ).css( "background-color", `${ color }` );
+    var value = $( '<span></spand>' ).html( `${ layer }` );
+    $( item ).append( key ).append( value );
+    $( '#legend' ).append( item );
   }
 }
 
