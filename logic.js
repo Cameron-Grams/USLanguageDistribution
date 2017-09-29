@@ -94,11 +94,6 @@ function loadKey( language ){
   $( '#legend' ).empty();
   $( '#legend' ).append( '<h3>Population</h3>' );
   $( '#js-intro' ).html( displayObj[ language ].intro );
-
-//  var colorKeyTitle = document.createElement( 'h3' );
-//  colorKeyTitle.innerHTML = "Population";
-//  legend.appendChild( colorKeyTitle );
-
   for (i = 0; i < layers.length; i++) {
     var layer = layers[i];
     var color = colors[i];
@@ -127,9 +122,11 @@ function readPosition( map, language ){
     }
 
     if (states.length > 0) {
+//      $('pd').html(  '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>' );
+//  for some reason this does not work... 
       document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
     } else {
-      document.getElementById('pd').innerHTML = '<p>Hover over a state for details</p>';
+      $('pd').html( '<p>Hover over a state for details</p>' );
     }
   });
   map.getCanvas().style.cursor = 'default';
