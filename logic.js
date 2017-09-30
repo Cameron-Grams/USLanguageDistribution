@@ -83,6 +83,29 @@ function loadNewMap( language ){
     center: [ -101.404, 48.829 ],
     zoom: 2.0
   } );
+
+  map.on( 'load', function(){      
+    map.addSource("states", {
+      "type": "geojson",
+      "data": "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces.geojson"
+    });
+    map.addLayer( {
+        "id": "state-fills-hover",
+        "type": "fill",
+        "source": "states",
+        "layout": {},
+        "paint": {
+            "fill-color": "#627BC1",
+            "fill-opacity": 1
+        },
+        "filter": ["==", "name", ""]
+    } );
+  } );
+
+
+
+
+
   loadKey( language );
   readPosition( map, language );
 };
@@ -112,18 +135,13 @@ function readPosition( map, language ){
   let states, stateNumber; 
 
   map.on('mousemove', function(e) {
-
     var states = map.queryRenderedFeatures(e.point, {
       layers: [ displayObj[ language ].displayType ]
     });
-
     if ( states[ 0 ] ){
       stateNumber = states[0].properties[ role ];
     }
-
     if (states.length > 0) {
-//      $('pd').html(  '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>' );
-//  for some reason this does not work... 
       document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
     } else {
       $('pd').html( '<p>Hover over a state for details</p>' );
