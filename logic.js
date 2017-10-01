@@ -83,7 +83,7 @@ function loadNewMap( language ){
     center: [ -101.404, 48.829 ],
     zoom: 2.0
   } );
-
+//onload is needed so there is a map to populate with the layer and features
   map.on( 'load', function(){      
     map.addSource("states", {
       "type": "geojson",
@@ -95,16 +95,12 @@ function loadNewMap( language ){
         "source": "states",
         "layout": {},
         "paint": {
-            "fill-color": "#627BC1",
+            "fill-color": "#cc0216",
             "fill-opacity": 1
         },
         "filter": ["==", "name", ""]
     } );
   } );
-
-
-
-
 
   loadKey( language );
   readPosition( map, language );
@@ -138,15 +134,28 @@ function readPosition( map, language ){
     var states = map.queryRenderedFeatures(e.point, {
       layers: [ displayObj[ language ].displayType ]
     });
+    //if the map layer has data, then highlight and display details
     if ( states[ 0 ] ){
       stateNumber = states[0].properties[ role ];
+      map.setFilter("state-fills-hover", ["==", "name", states[0].properties.name]);
     }
+    //if the cursor leaves the map clear the cursor highlights
+    if ( !states[ 0 ] ){
+      map.setFilter("state-fills-hover", ["==", "name", ""] );
+    }
+    //display the details of the state on the map if there is information 
     if (states.length > 0) {
       document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' +  stateNumber.toLocaleString('en-US') + '</strong> people ' + purpose + ' in ' + states[0].properties.name + '</em></p>';
     } else {
       $('pd').html( '<p>Hover over a state for details</p>' );
     }
-  });
+  } );
+
+  //clear the red highlight of the cursor
+  map.on( 'mouseleave', function( e ){
+    map.setFilter("state-fills-hover", ["==", "name", ""] );
+  } )
+
   map.getCanvas().style.cursor = 'default';
 };
 
