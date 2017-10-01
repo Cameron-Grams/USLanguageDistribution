@@ -95,7 +95,7 @@ function loadNewMap( language ){
         "source": "states",
         "layout": {},
         "paint": {
-            "fill-color": "#cc0216",
+            "fill-color": "#0e028c",
             "fill-opacity": 1
         },
         "filter": ["==", "name", ""]
